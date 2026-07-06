@@ -298,11 +298,11 @@ def collect_cpk(paths: list[Path]) -> list[Path]:
 
 def choose_paths_gui() -> list[Path]:
     import tkinter as tk
-    from tkinter import filedialog
+    from tkinter import filedialog, messagebox
 
     root = tk.Tk()
     root.withdraw()
-    choice = filedialog.askyesno("Sakura CPK unpacker", "Yes: choose a folder recursively\nNo: choose individual CPK files")
+    choice = messagebox.askyesno("Sakura CPK unpacker", "Yes: choose a folder recursively\nNo: choose individual CPK files")
     if choice:
         folder = filedialog.askdirectory(title="Choose folder containing CPK files")
         return [Path(folder)] if folder else []

@@ -41,11 +41,11 @@ def collect_inputs(paths: list[Path]) -> list[Path]:
 
 def choose_paths_gui() -> list[Path]:
     import tkinter as tk
-    from tkinter import filedialog
+    from tkinter import filedialog, messagebox
 
     root = tk.Tk()
     root.withdraw()
-    choice = filedialog.askyesno(
+    choice = messagebox.askyesno(
         "Sakura media converter",
         "Yes: choose a folder recursively\nNo: choose individual files",
     )
